@@ -18,11 +18,9 @@ class Square:
         self.__size = size
 
     @property
-    """ Retrieves the size of the Square """
     def size(self):
         return self.__size
     @size.setter
-    """ sets the size of the square minimmize loss of data """
     def size(self, size):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
