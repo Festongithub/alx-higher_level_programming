@@ -3,16 +3,17 @@
 
 
 class Rectangle:
-    number_of_instances = 0
-    print_symbol = "#"
-
     """
-    Class that defines properties of rectangle by: (based on 2-rectangle.py).
+    Class that defines properties of rectangle by: (based on 7-rectangle.py).
 
     Attributes:
         width (int): width of the rectangle.
         height (int): height of the rectangle.
     """
+
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """Creates new instances of Rectangle.
 
@@ -119,22 +120,41 @@ class Rectangle:
         return "".join(rectangle)
 
     def __repr__(self):
+        """Returns a string representation of the rectangle.
+
+        Returns:
+            str: the rectangle representation.
+        """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
+        """Deletes an instance of a class
+        """
         print("{:s}".format("Bye rectangle..."))
         type(self).number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """Computes the area of two rectangles and compares them.
+
+        Args:
+            rect_1 (Rectangle): first rectangle.
+            rect_2 (Rectangle): second rectangle.
+
+        Returns:
+            Rectangle: the rectangle with the biggest area else rect_1 if
+            areas are equal
+        """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
+
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
 
         area_1 = rect_1.area()
         area_2 = rect_2.area()
 
-        if area_1 > area_2:
+        if area_1 >= area_2:
             return rect_1
+
         return rect_2
