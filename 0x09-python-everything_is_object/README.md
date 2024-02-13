@@ -1,0 +1,1 @@
+Everything in Python is an object we have to understand this through abstraction, and python is highly abstractive and having such an understanding on abstraction is important for a software engineer 
