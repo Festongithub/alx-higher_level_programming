@@ -6,4 +6,8 @@ An empty class
 
 
 class BaseGeometry:
+
+    """
+    Class called BaseGeometry
+    """
     pass
