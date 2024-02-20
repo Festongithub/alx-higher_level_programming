@@ -2,7 +2,7 @@
 
 def read_file(filename=""):
     """
-    a function that reads a text file (UTF8) and prints it to stdout:
+    reads a text file 
     """
-    with open(filename,encoding="UTF-8") as f:
+    with open(filename, encoding='UTF-8') as f:
         print(f.read(), end="")
