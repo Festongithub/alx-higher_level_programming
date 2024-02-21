@@ -1,28 +1,53 @@
-import unittest
 
-class TestMyList(unittest.TestCase):
-    def setUp(self):
-        # Create an instance of MyList for testing
-        self.my_list_instance = MyList([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
 
-    def test_print_sorted(self):
-        # Test if print_sorted method prints the list in ascending order
-        expected_result = [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+# This testfile is for the append file
 
-        # Redirect stdout to capture the printed output
-        import sys
-        from io import StringIO
-        original_stdout = sys.stdout
-        sys.stdout = StringIO()
+#  this is for the module 1-my_list.py
 
-        try:
-            self.my_list_instance.print_sorted()
-            printed_output = sys.stdout.getvalue().strip().split()
-            printed_output = [int(element) for element in printed_output]
-            self.assertEqual(printed_output, expected_result)
-        finally:
-            sys.stdout = original_stdout
+======================================
 
-if __name__ == '__main__':
-    unittest.main()
+# This library has one function print_sorted() that returns a number in ascending order
 
+# Import the function 
+
+
+>>> Mylist = __import__('1-my_list').MyList
+>>> my_list = Mylist()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(4)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 2, 3, 4, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 2, 3, 4, 5
+
+# check for list similaority
+
+>>> isinstance(my_list, list)
+True
+>>> my_list = Mylist()
+>>> my_list.append(45)
+>>> my_list.append(46)
+>>> my_list.append(47)
+>>> print(my_list)
+[45, 46, 47]
+
+# Test for string and numbers
+
+>>> my_list = Mylist()
+>>> my_list.append("90")
+>>> my_list.append("91")
+>>> my_list.append("92")
+>>> my_list.append("93")
+>>> my_list.append("94")
+>>> my_list.append("95")
+>>> my_list = Mylist()
+>>> my_list.append("-90")
+>>> my_list.append("-32")
+>>> my_list.append("-36")
+>>> print(my_list)
+['-90', '-32', '-36']
