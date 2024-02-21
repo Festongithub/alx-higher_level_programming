@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
+
 """
-An empty class
+a class Rectangle that inherits from BaseGeometry (7-base_geometry.py)
+(task based on 8-rectangle.py)
 """
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
@@ -15,9 +17,6 @@ class Rectangle(BaseGeometry):
         """
         self.__width = width
         self.__height = height
-
-        # validate with integer_validator
-
         self.integer_validator("width", self.__width)
         self.integer_validator("height", self.__height)
 
