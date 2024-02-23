@@ -130,8 +130,8 @@ class Rectangle(Base):
         """
         overriding method
         """
-        return "[Rectangle] ({}){:d}/{:d} - {:d} / {:d}".format(self.id,
-                self.__x, self.__y, self.__width, self.__height)
+        return ("[Rectangle] ({}){:d}/{:d} - {:d} / {:d}".format(self.id,
+            self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         """
@@ -145,3 +145,12 @@ class Rectangle(Base):
             else:
                 for key, value in kwargs.items():
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        d2 = {}
+        d2['id'] = self.id
+        d2['width'] = self.width
+        d2['height'] = self.height
+        d2['x'] = self.x
+        d2['y'] = self.y
+        return d2
