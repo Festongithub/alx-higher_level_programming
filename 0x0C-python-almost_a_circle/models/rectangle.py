@@ -148,9 +148,9 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         d2 = {}
-        d2['id'] = self.id
-        d2['width'] = self.width
-        d2['height'] = self.height
-        d2['x'] = self.x
-        d2['y'] = self.y
-        return d2
+        d2["id"] = self.id
+        d2["width"] = self.width
+        d2["height"] = self.height
+        d2["x"] = self.x
+        d2["y"] = self.y
+        return (d2)

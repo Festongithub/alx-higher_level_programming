@@ -12,7 +12,7 @@ class Square(Rectangle):
     Inherits from the Rectangle
     """
 
-    def __init__(self, size, x=0, y=0, id=None):
+    def __init__(self, size, x=0, y=0,  id=None):
         """
         Instance of the Rectangle-Square
         """
@@ -71,9 +71,9 @@ class Square(Rectangle):
         """
         d1 = self.__dict__
         d2 = {}
-        d2['id'] = d1['id']
-        d2['size'] = d1['_Rectangle__width']
-        d2['x'] = d1['_Rectangle__x']
-        d2['y'] = d1['_Rectangle__y']
+        d2["id"] = d1['id']
+        d2["size"] = d1['_Rectangle__width']
+        d2["x"] = d1['_Rectangle__x']
+        d2["y"] = d1['_Rectangle__y']
 
-        return d2
+        return (d2)
