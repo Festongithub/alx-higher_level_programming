@@ -9,11 +9,10 @@ project
 
 class Base:
 
-    __nb_objects = 0
-
     """
     Class Representation of the base
     """
+    __nb_objects = 0
 
     def __init__(self, id=None):
         """
