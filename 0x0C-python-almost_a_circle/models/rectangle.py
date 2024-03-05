@@ -18,12 +18,63 @@ class Rectangle(Base):
         """
 
         super().__init__(id)
-        self.__width = 0
-        self.__height = 0
-        self.__x = 0
-        self.__y = 0
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+    @property
+    def width(self):
+        """
+        Returns the value of width
+        """
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """
+        Modifies the value of the width
+        """
+        self.__width = width
+
+    @property
+    def height(self):
+        """
+        Returns value of height
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """
+        Modifies the value of the width
+        """
+        self.__height = height
+
+    @property
+    def x(self):
+        """
+        Returns value of x
+        """
+        return self.__x
+
+    @height.setter
+    def x(self, value):
+        """
+        Modifies the value of x
+        """
+        self.__x = value
+
+    @property
+    def y(self):
+        """
+        Returns value of y
+        """
+        return self.__y
+
+    @height.setter
+    def y(self, value):
+        """
+        Modifies the value of y
+        """
+        self.__y = value
