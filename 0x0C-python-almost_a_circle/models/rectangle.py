@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 
-""" Define the class rectangle """
+"""Define the class rectangle"""
 
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """The class inherits from the class Base """
+    """The class inherits from the class Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """The class instantiation """
+        """The class instantiation"""
 
         super().__init__(id)
         self.width = width
@@ -20,12 +20,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Returns the value of the width """
+        """Returns the value of the width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Property setter for the width """
+        """Property setter for the width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -34,12 +34,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Returns the value of the height """
+        """Returns the value of the height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Property setter for the height """
+        """Property setter for the height"""
         if not isinstance(value, int):
             raise TypeError("height  must be an integer")
         if value <= 0:
@@ -48,7 +48,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Returns the value of the x  """
+        """Returns the value of the x"""
         return self.__x
 
     @x.setter
@@ -62,7 +62,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Returns the value of the y """
+        """Returns the value of the y"""
         return self.__y
 
     @y.setter
