@@ -49,7 +49,7 @@ class Rectangle(Base):
         """
         Modifies the value of the width
         """
-        self.__height = height
+        self.__height = value
 
     @property
     def x(self):
