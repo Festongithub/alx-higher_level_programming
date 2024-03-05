@@ -2,6 +2,10 @@
 
 from models.base import Base
 
+"""
+This module inherits from the Base class
+"""
+
 
 class Rectangle(Base):
     """
