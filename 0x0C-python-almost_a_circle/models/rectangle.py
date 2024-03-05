@@ -1,9 +1,5 @@
 #!/usr/bin/python3
 
-"""
-This module inherits from the Base class
-"""
-
 from models.base import Base
 
 
