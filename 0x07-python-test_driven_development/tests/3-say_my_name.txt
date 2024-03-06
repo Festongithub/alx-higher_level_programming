@@ -1,0 +1,26 @@
+
+# The ``3-say_my_name`` module
+# This module tests the say_my_name function
+====================================
+How to use 
+=============
+The function ``say_my_name`` prints full namess
+
+Import the module
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("Henry", "John")
+My name is Henry John
+>>> say_my_name("Holberton", "school")
+My name is Holberton school
+>>> say_my_name("Holberton")
+My name is Holberton 
+>>> say_my_name("Hyy")
+My name is Hyy 
+>>> say_my_name("456")
+My name is 456 
+>>> say_my_name(67)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/root/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 11, in say_my_name
+    raise TypeError("first name must be a string")
+TypeError: first name must be a string

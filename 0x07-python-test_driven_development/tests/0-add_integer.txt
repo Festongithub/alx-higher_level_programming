@@ -1,13 +1,35 @@
 # The module contains the add_integer function
 
+# This module tests for the add_integer function
+# The ``0-add_integer`` module
+============================================
+How to use 0-add_integer.py
+============================================
+
+This library has one function called ``add_integer()``
+
+Numbers
+=======
+
+``add_integer()`` returns the sum of its arguments. The default argument
+for b is 98. For numbers, that value is equivalent to using the ``+``
+operator:
+
 Importing the module
 >>> add_integer = __import__('0-add_integer').add_integer
+
+""" Adding two integers """
 >>> add_integer(90, 90)
 180
+
+Adding a single integer
 >>> add_integer(90)
 188
+Adding positive and negative integers
 >>> add_integer(90, -34)
 56
+
+Adding list and int
 >>> add_integer(90, [])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -15,21 +37,27 @@ Traceback (most recent call last):
     raise TypeError("b must be an integer")
 TypeError: b must be an integer
 
+Adding an integer and string
 >>> add_integer(90, b)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'b' is not defined
+
+Adding integer and float
 >>> add_integer(90, flaot(9))
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'flaot' is not defined
 
+Adding integer and string
 >>> add_integer(90, "school")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/root/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 13, in add_integer
     raise TypeError("b must be an integer")
 TypeError: b must be an integer
+
+Adding integer and list
 >>> add_integer(90, [])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
