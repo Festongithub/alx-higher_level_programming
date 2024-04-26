@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 if __name__ == '__main__':
-
+    """create engine"""
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
                           argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
@@ -18,6 +18,6 @@ if __name__ == '__main__':
     """query the states for data"""
     states = session.query(State).order_by(State.id).all()
     for state in states:
-        print("{} {}".format(state.id, state.name))
+        print("{} : {}".format(state.id, state.name))
     """close session"""
     session.close()
