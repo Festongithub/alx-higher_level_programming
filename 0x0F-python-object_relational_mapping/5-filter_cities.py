@@ -12,13 +12,13 @@ if __name__ == '__main__':
     # select from the database
     cur.execute("SELECT cities.id, cities.name, states.name FROM cities\
                 INNER JOIN states ON cities.state_id = states.id\
-                WHERE states.name=%s", [argv[4]])
+                WHERE states.name = %s", [argv[4]])
     # get all states
     cities = cur.fetchall()
     j = []
     # print all states
     for i in cities:
         j.append(i[1])
-        print(" ".join(j))
+        print(", ".join(j))
         # clean up
         cur.close()
