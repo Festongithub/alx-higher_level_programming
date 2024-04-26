@@ -10,7 +10,8 @@ if __name__ == '__main__':
     # run cursor on the database
     cur = db.cursor()
     # select from the database
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name\
+                LIKE BINARY 'N%' ORDER BY id ASC")
     # get all states
     states = cur.fetchall()
     # print all states
