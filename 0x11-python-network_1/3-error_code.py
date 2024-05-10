@@ -4,19 +4,16 @@ import urllib.request
 import urllib.error
 import sys
 
-try:
-    # Get the URL from the command line arguments
-    url = sys.argv[1]
+if __name__ == "__main__":
+    try:
+        # Get the URL from the command line arguments
+        url = sys.argv[1]
 
     # Send the request to the URL
-    response = urllib.request.urlopen(url)
-
-    # Decode the response body in utf-8
-    body = response.read().decode('utf-8')
-
-    # Print the response body
-    print(body)
+    with urllib.request.urlopen(url) as response:
+        body = response.read().decode('utf-8')
+        print(body)
 
 except urllib.error.HTTPError as e:
     # Print the error code
-    print(f"Error code: {e.code}")
+    print("Error code:{}".format(e.code))
