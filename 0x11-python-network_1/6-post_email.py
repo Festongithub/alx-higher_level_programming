@@ -15,5 +15,5 @@ if __name__ == "__main__":
             "email": email
             }
 
-    response = requesta.post(url, email_data)
+    response = requesta.post(url,data=payload)
     print(response.text)
