@@ -8,11 +8,11 @@ request.get(endPoint, function (err, response, body) {
   if (err) {
     throw err;
   } else if (response.statusCode === 200) {
-    const res = JSON.parse(body).res;
+    const characters = JSON.parse(body).characters;
     const list = [];
-    res.forEach(res => {
+    characters.forEach(character => {
       list.push(new Promise((resolve, reject) => {
-        request.get(res, function (err, response, body) {
+        request.get(character, function (err, response, body) {
           if (err) {
             reject(err);
           } else if (response.statusCode === 200) {
