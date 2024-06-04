@@ -3,14 +3,12 @@
 const request = require('request');
 const baseUrl = 'https://swapi-api.alx-tools.com/api/films';
 
-const movieId  = process.argv[2];
-
+const movieId = process.argv[2];
 
 request(`${baseUrl}/${movieId}/`, (error, response, body) => {
-	if (error)
-	{
-		console.log(error);
-	}
-	const json = JSON.parse(body);
-	console.log(json.title);
+  if (error) {
+    console.log(error);
+  }
+  const json = JSON.parse(body);
+  console.log(json.title);
 });
