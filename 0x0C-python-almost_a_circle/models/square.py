@@ -1,79 +1,97 @@
 #!/usr/bin/python3
+"""Defines a class Square"""
 
-"""
-This module imports the Rectangle model
-"""
 
+from inspect import classify_class_attrs
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """
-    Inherits from the Rectangle
-    """
+    """Class that defines properties of Square.
 
-    def __init__(self, size, x=0, y=0,  id=None):
-        """
-        Instance of the Rectangle-Square
+     Attributes:
+        width (int): width of rectangle.
+        height (int): height of rectangle.
+        x (int): x.
+        y (int): y.
+        id (int): identity of square.
+    """
+    def __init__(self, size, x=0, y=0, id=None):
+        """Creates new instances of Square
+
+        Args:
+            size (int): width and height of square.
+            x (int, optional): x. Defaults to 0.
+            y (int, optional): y. Defaults to 0.
+            id (int, optional): Identity number of square. Defaults to None.
         """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """
-        String representation
-        """
-        return "[Square] ({}){:d}/{:d} - {:d}".format(self.id, self.x,
-                                                      self.y, self.size)
+        """Prints square"""
+        return ("[Square] ({}) {:d}/{:d} - {:d}".
+                format(self.id, self.x, self.y, self.size))
 
     @property
     def size(self):
-        """
-        return width
+        """Property retriever for size.
+
+        Returns:
+            int: size of one side of square.
         """
         return self.width
 
     @size.setter
     def size(self, value):
-        """
-        sets new value of width
+        """Property setter for width of square.
+        Args:
+            value (int): width of square.
+        Raises:
+            TypeError: if width is not an integer.
+            ValueError: if width is less than or equal to zero.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
+        
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        """
-        Take arguments
-        """
-        if args is not None and len(args) != 0:
-            list_attr = ['id', 'size', 'x', 'y']
+        """Assigns an argument to each attribute
 
+        Args:
+            *args (tuple): arguments.
+            **kwargs (dict): double pointer to a dictionary.
+        """
+        if args is not None and len(args) is not 0:
+            list_atr = ['id', 'size', 'x', 'y']
             for i in range(len(args)):
-                if list_attr[i] == 'size':
+                if list_atr[i] == 'size':
                     setattr(self, 'width', args[i])
                     setattr(self, 'height', args[i])
                 else:
-                    setattr(self, list_attr[i], args[i])
-            else:
-                for key, value in kwargs.items():
-                    if key == 'size':
-                        setattr(self, 'width', value)
-                        setattr(self, 'height', value)
-                    else:
-                        setattr(self, key, value)
+                    setattr(self, list_atr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == 'size':
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+                else:
+                    setattr(self, key, value)
 
     def to_dictionary(self):
-        """
-        Dictionary representation of Rectangle
-        """
-        d1 = self.__dict__
-        d2 = {}
-        d2['id'] = d1['id']
-        d2['size'] = d1['_Rectangle__width']
-        d2['x'] = d1['_Rectangle__x']
-        d2['y'] = d1['_Rectangle__y']
+        """Returns the dictionary representation of a Square.
 
-        return (d2)
+        Returns:
+            dict: square.
+        """
+        dict1 = self.__dict__
+        dict2 = {}
+        dict2['id'] = dict1['id']
+        dict2['size'] = dict1['_Rectangle__width']
+        dict2['x'] = dict1['_Rectangle__x']
+        dict2['y'] = dict1['_Rectangle__y']
+
+        return dict2
