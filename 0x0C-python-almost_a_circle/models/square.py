@@ -71,9 +71,9 @@ class Square(Rectangle):
         """
         d1 = self.__dict__
         d2 = {}
-        d2["id"] = d1['id']
-        d2["size"] = d1['_Rectangle__width']
-        d2["x"] = d1['_Rectangle__x']
-        d2["y"] = d1['_Rectangle__y']
+        d2['id'] = d1['id']
+        d2['size'] = d1['_Rectangle__width']
+        d2['x'] = d1['_Rectangle__x']
+        d2['y'] = d1['_Rectangle__y']
 
         return (d2)
